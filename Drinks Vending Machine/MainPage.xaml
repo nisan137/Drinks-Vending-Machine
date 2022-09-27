@@ -1,0 +1,77 @@
+﻿<Page
+    x:Class="Drinks_Vending_Machine.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Drinks_Vending_Machine"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid Name="MasterGrid">
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black"/>
+                <GradientStop Color="#FF480505" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid x:Name="DisplayGrid" Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="14*"/>
+            </Grid.RowDefinitions>
+            <Image Source="/Assets/CM.png" Grid.Column="0" Grid.Row="1"
+                   VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5"/>
+
+            <TextBlock x:Name ="displayTbl" Grid.Column="1" Grid.Row="1" 
+                       HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20"
+                     Foreground="White" FontFamily="Arial" Height="550" Width="650"/>
+
+            <Button Content="Exit" FontSize="10"
+                    FontFamily="Arial" Grid.Row="0" Grid.Column="1"
+                    HorizontalAlignment="Right" VerticalAlignment="Top"
+                    Tapped="Exit_Tapped"/>
+            
+            <Button Content="ReStock Ingredients" Grid.Column="1" Grid.Row="1"
+                    FontSize="10" HorizontalAlignment="Right" VerticalAlignment="Top" Tapped="ReStockIngredients_Tapped"/>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Button x:Name="CoffeeBtn" Grid.Column="0" Grid.Row="0"
+                    HorizontalAlignment="Center" FontFamily="Arial"
+                    FontSize="20" Content="Coffee" Foreground="White" Tapped="PreparCoffee_Tapped"/>
+            <Button x:Name="TeaBtn" Grid.Column="1" Grid.Row="0" FontFamily="Arial"
+                    FontSize="20" Content="Tea" Foreground="White"
+                    HorizontalAlignment="Center" Tapped="PreparTea_Tapped"/>
+            <Button x:Name="ChocolateMilkBtn" Grid.Column="3" Grid.Row="0"
+                    HorizontalAlignment="Center" FontFamily="Arial" 
+                    FontSize="20" Content="ChocolateMilk" Foreground="White"
+                    Tapped="PreparChocolateMilk_Tapped"/>
+            <Button x:Name="addBeverage1" Grid.Row="1" Grid.Column="0"
+                    HorizontalAlignment="Center" FontFamily="Arial"
+                    FontSize="20" Content="Coming Soon..." Foreground="White"/>
+            <Button x:Name="addBeverage2" Grid.Row="1" Grid.Column="1" FontFamily="Arial"
+                    FontSize="20" Content="Coming Soon..." Foreground="White"
+                    HorizontalAlignment="Center"/>
+            <Button x:Name="addBeverage3" Grid.Row="1" Grid.Column="3" 
+                    HorizontalAlignment="Center" FontFamily="Arial"
+                    FontSize="20" Content="Coming Soon..." Foreground="White"/>
+        </Grid>
+    </Grid>
+</Page>
