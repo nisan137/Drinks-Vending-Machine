@@ -23,9 +23,6 @@ The GUI show the types of drinks available.
 
 
 
-Show what happens if a<img width="574" alt="outOfStock" src="https://user-images.githubusercontent.com/98767414/202164972-98fd1aba-0175-41d9-9385-77ad4efff2eb.png">
-
-
 
 New drinks are added to the machine from time to time.
 So Build a general mechanism to support these adaptations.
